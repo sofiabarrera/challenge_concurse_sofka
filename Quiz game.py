@@ -1,6 +1,10 @@
 import random
+import os
+os.system("cls")
 score=0
 
+nombre = input("Digite su nombre: ")
+edad= input(int("Digite su edad: "))
 
 pregunta =random.choice(["¿La capital del departamento de Bolivar es?",
 "¿Puerto Carreño es la capital de cuál departamento?", "¿La capital del departamento de Caquetá es?",
@@ -415,5 +419,12 @@ if score == 80:
     if score == 100:
         print("Ganaste!!. Felicitaciones!")
 
+    archivo = open('Historicos_juego.txt','a')
+    archivo.write(nombre+'\n')
+    archivo.write(edad+'\n')
+    archivo.write(score+'\n')
+    archivo.write("*****************************************************"+'\n')
+    archivo.write("                                                     "+'\n')
+    archivo.close()
 
-        
+
